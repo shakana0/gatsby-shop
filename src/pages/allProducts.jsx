@@ -10,17 +10,15 @@ const AllProducts = ({ data }) => {
     <>
       <Nav />
       <ProductsStyling>
-
         {data.allContentfulFlowerProduct.edges.map(({ node }) => (
           <Link to={`/product/${node.name}/`}>
           <article>
             <FavoriteBorderIcon className="heart"/>
-            <img src={node.productImg.url} alt="Picture of flower bouquet" />
+            <img src={node.productImg.url} alt={node.productImg.title} />
             <h3>{node.name}</h3>
             <span>{node.price}kr</span>
           </article>
           </Link>
-
         ))}
       </ProductsStyling>
       <Footer />
@@ -28,11 +26,12 @@ const AllProducts = ({ data }) => {
   );
 };
 
+// @contentful/rich-text-react-render
 export default AllProducts;
 export const Head = () => <title>AllProducts</title>;
 
 //GraphQl query
-export const IndexPageQury = graphql`
+export const AllProductQury = graphql`
   query myQuery {
     allContentfulFlowerProduct {
       edges {
@@ -40,6 +39,7 @@ export const IndexPageQury = graphql`
           name
           price
           productImg{
+            title
             url
           }
         }

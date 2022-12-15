@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 export const SingleProductStyling = styled.main`
-  padding: 4rem 0;
+  /* padding: 4rem 0; */
   background-color: #e7e6e9;
   article {
     /* border: 2px solid purple; */

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 export const ProductsStyling = styled.main`
-  padding: 4rem 0;
+  /* padding: 4rem 0; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,10 +11,9 @@ export const ProductsStyling = styled.main`
   /* background-color: #c0b0c0; */
   background-color: #c8bdc8b8;
 
-  a{
+  a {
     text-decoration: none;
     color: black;
-    
   }
 
   article {
@@ -26,8 +25,12 @@ export const ProductsStyling = styled.main`
 
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     flex-direction: column;
+    transition: 0.5s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
 
     img {
       width: 60%;
@@ -36,10 +39,10 @@ export const ProductsStyling = styled.main`
     .heart {
       align-self: flex-end;
       font-size: 2rem;
-      padding: .5rem .5rem 0 0;
+      padding: 0.5rem 0.5rem 0 0;
       cursor: pointer;
 
-      &:hover{
+      &:hover {
         fill: #e80000;
       }
     }

@@ -19,5 +19,5 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head = () => <title>Florista</title>;
+export const Head = () => <title>My Florista</title>;
 
