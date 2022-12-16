@@ -21,3 +21,5 @@ export default IndexPage;
 
 export const Head = () => <title>My Florista</title>;
 
+// "accessToken": `${process.env.REACT_APP_ACCESSTOKEN}`,
+// "spaceId":  `${process.env.REACT_APP_SPACE_ID}`
