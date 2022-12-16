@@ -4,7 +4,7 @@ import bgImg from "../images/angele.jpg";
 
 export const OurStaffStyling = styled.main`
   padding: 0 0 4rem 0;
-  background-color: #E7E6E9;
+  background-color: #e7e6e9;
 
   figure {
     margin: 0;
@@ -23,26 +23,40 @@ export const OurStaffStyling = styled.main`
     /* border: 2px solid red; */
 
     .our-staff-page-info {
-      width: 80%;
       /* border: 2px solid black; */
-      padding-bottom: 4rem;
-      /* padding: 0 2rem; */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-      p {
-        line-height: 1.8;
+      section {
+        width: 80%;
+        /* border: 2px solid black; */
+        padding-bottom: 4rem;
+
+        p {
+          line-height: 1.8;
+        }
       }
     }
+
     .staff-info {
       width: 100%;
-      /* border: 2px solid black; */
+      /* border: 2px solid red; */
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
       padding: 2rem 0;
       background-color: #f0e8f19f;
 
-      article {
+      a {
+        text-decoration: none;
+        color: black;
         width: 40%;
+      }
+
+      article {
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -85,9 +99,8 @@ export const OurStaffStyling = styled.main`
           /* background-color: transparent; */
           background-color: #dd60a35b;
           cursor: pointer;
-          transition: .5s ease;
-          box-shadow: 2px 3px 3px 0px rgba(0,0,0,0.75);
-
+          transition: 0.5s ease;
+          box-shadow: 2px 3px 3px 0px rgba(0, 0, 0, 0.75);
 
           &:hover {
             background-color: #d9579ccc;

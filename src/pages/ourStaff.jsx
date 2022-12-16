@@ -15,25 +15,26 @@ const OurStaff = ({ data }) => {
       <OurStaffStyling>
         <figure></figure>
         <div className="container">
-          {pageInfo.nodes.map((node) => (
-            <>
+          {pageInfo.nodes.map((node, index) => (
+            <div className="our-staff-page-info" key={index}>
               <h1>{node.pageName}</h1>
-              <section className="our-staff-page-info">
+              <section>
                 <p>{node.bodyText.bodyText}</p>
               </section>
-            </>
-            // <p>{node.bodyText.bodyText}</p>
+            </div>
           ))}
           <section className="staff-info">
-            {staffInfo.nodes.map((node) => (
-              <article>
-                <img src={node.staffImg.url} alt={node.staffImg.title} />
-                <div>
-                  <h2>{node.name}</h2>
-                  <h4>{node.role}</h4>
-                </div>
-                <button>More Info</button>
-              </article>
+            {staffInfo.nodes.map((node, index) => (
+              <Link to={`/staff/${node.name}`} key={index}>
+                <article>
+                  <img src={node.staffImg.url} alt={node.staffImg.title} />
+                  <div>
+                    <h2>{node.name}</h2>
+                    <h4>{node.role}</h4>
+                  </div>
+                  <button>More Info</button>
+                </article>
+              </Link>
             ))}
           </section>
         </div>

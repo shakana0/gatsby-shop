@@ -1,32 +1,46 @@
 import * as React from "react";
 import { Link, graphql } from "gatsby";
-import { IndexStyling } from "../assets/styles/IndexStyling";
+// import { AbutPageStyling } from "../assets/styles/AbutPageStyling";
+import { AbutPageStyling } from "../assets/styles/AboutPageStaling";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-
-export const Bold = ({children}) => <strong>{children}</strong>
-export const Text = ({children}) => (
-  <p className="align-center">{children}</p>
-)
-export const Heading3 = ({children}) => (
-  <p className="align-center">{children}</p>
-)
+import { renderRichText } from "gatsby-source-contentful/rich-text";
+import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 
 const AboutPage = ({ data }) => {
-    <>
-      <Nav />
-      <IndexStyling>
-        <h1>About Page</h1>
-        {/* {renderRichText(bodyText)} */}
+  const richText = data.allContentfulAboutPage.nodes[0];
+  const options = {
+    renderMark: {
+      [MARKS.BOLD]: (text) => <b className="font-bold">{text}</b>,
+    },
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        console.log("heeell", node.data.target);
+        return (
+          <>
+            {/* <h2>Embedded Asset</h2> */}
+            <img
+              src={node.data.target.gatsbyImageData.images.fallback.src}
+              alt="profile-pic"
+            />
+          </>
+        );
+      },
+    },
+  };
 
-        {/* <article>
-          {blogPost.mainContent &&
-            renderRichText(blogPost.mainContent, options)}
-        </article> */}
-      </IndexStyling>
+  return (
+    <>
+      {/* <p>{richText.nodes[0].pageName}</p> */}
+      <Nav />
+      <AbutPageStyling>
+        <h1>{richText.pageName}</h1>
+        <section>{renderRichText(richText.bodyText, options)}</section>
+      </AbutPageStyling>
       <Footer />
     </>
-  
+  );
 };
 
 export default AboutPage;

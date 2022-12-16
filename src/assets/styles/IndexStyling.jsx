@@ -3,6 +3,7 @@ import styled from "styled-components";
 import bgImg from "../images/bg-flower.jpg";
 
 export const IndexStyling = styled.main`
+padding: 0;
   figure {
     margin: 0;
     background-image: url(${bgImg});

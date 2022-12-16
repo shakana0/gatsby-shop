@@ -5,17 +5,20 @@ import Footer from "../components/Footer";
 import { SingleProductStyling } from "../assets/styles/SingleProductStyling";
 
 const SingleProduct = ({ data }) => {
-  const post = data.contentfulFlowerProduct;
+  const product = data.contentfulFlowerProduct;
   return (
     <>
       <Nav />
       <SingleProductStyling>
         <article>
-          <img src={post.productImg.url} alt="picture of bouquet" />
+          <img src={product.productImg.url} alt="picture of bouquet" />
           <section>
-            <h2>{post.name}</h2>
-            <span>{post.price}kr</span>
-            <p>{post.productInfo.productInfo}</p>
+            <div>
+              <h2>{product.name}</h2>
+              <h3>{product.price}kr</h3>
+              <p>{product.productInfo.productInfo}</p>
+            </div>
+            <button>Add To Cart</button>
           </section>
         </article>
       </SingleProductStyling>
