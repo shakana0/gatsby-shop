@@ -29,10 +29,7 @@ const AllProducts = ({ data }) => {
   );
 };
 
-// Gatsby global state
-//https://www.youtube.com/watch?v=ThCfN5WJ0cU
 
-// @contentful/rich-text-react-render
 export default AllProducts;
 export const Head = () => <title>AllProducts</title>;
 
@@ -53,3 +50,11 @@ export const AllProductQury = graphql`
     }
   }
 `;
+
+
+// Gatsby global state
+//https://www.youtube.com/watch?v=ThCfN5WJ0cU
+
+//waring in gatsby node, kan man skapa flera pages sådär???
+
+//kategorier

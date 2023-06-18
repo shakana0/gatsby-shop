@@ -9,8 +9,9 @@ const IndexPage = () => {
     <>
       <Nav />
       <IndexStyling>
-        <figure></figure>
-        {/* <h1>Hej</h1> */}
+        <figure>
+          <h1>Welcome To My Florista</h1>
+        </figure>
       </IndexStyling>
       <Footer />
     </>
@@ -20,6 +21,3 @@ const IndexPage = () => {
 export default IndexPage;
 
 export const Head = () => <title>My Florista</title>;
-
-// "accessToken": `${process.env.REACT_APP_ACCESSTOKEN}`,
-// "spaceId":  `${process.env.REACT_APP_SPACE_ID}`

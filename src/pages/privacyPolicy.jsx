@@ -8,12 +8,18 @@ import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 
 const PrivacyPolicy = ({ data }) => {
   const richText = data.allContentfulPrivacyPolicy.nodes[0];
+  console.log(richText, 'richText')
   const options = {
     renderMark: {
       [MARKS.BOLD]: (text) => <b className="font-bold">{text}</b>,
     },
     renderNode: {
-      [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
+      [BLOCKS.PARAGRAPH]: (node, children) => (
+        // console.log(children, 'children'),
+        // console.log(node, 'node')
+
+        <p>{children}</p>
+      ),
     },
   };
 

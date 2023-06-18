@@ -11,6 +11,17 @@ padding: 0;
     background-size: cover;
     background-repeat: no-repeat;
     height: 90vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1{
+      font-size: 5rem;
+      color: #130259;
+      background-color: #ffffff47;
+
+    }
   }
 `;
 
